@@ -1,0 +1,24 @@
+<div class="container">
+
+<form [formGroup]="loginform" (ngSubmit)="login()">
+
+   <div class="form-group">
+       <label for="user">USERNAME</label>
+       <input type="text" class="form-control" id="user" formControlName="username">
+       <small style="color:red" *ngIf="username.invalid && username.touched">Field is Mandatory </small>
+   </div>
+   <br/>
+   <div class="form-group">
+       <label for="pwd">PASSWORD</label>
+       <input type="text" class="form-control" id="pwd" formControlName="password">
+       <small style="color:red" *ngIf="password.invalid && password.touched">*Please enter Password</small> 
+    </div>
+
+       <button type="button" class="btn btn-link">Forgot Password</button>
+    <br/>
+   <div>
+       <button class="btn btn-primary">LOGIN</button>
+   </div>
+   
+</form>
+</div><br/>

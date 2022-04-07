@@ -1,0 +1,47 @@
+<div class="container">
+
+  <form [formGroup]="registrationform" (ngSubmit)="register()">
+
+      <div class="form-group">
+          <label for="fname">FIRST NAME</label>
+          <input type="text" class="form-control" id="fname" formControlName="firstname">
+
+      </div>
+
+      <div class="form-group">
+          <label for="lname">LAST NAME</label>
+          <input type="text" class="form-control" id="lname" formControlName="lastname">
+      </div>
+
+      <div class="form-group">
+          <label for="email">EMAIL ID</label>
+          <input type="text" class="form-control" id="email" formControlName="emailid">
+
+      </div>
+      <div class="form-group">
+          <label for="mob">MOBILE NUMBER</label>
+          <input type="text" class="form-control" id="mob" formControlName="mobilenumber">
+      </div>
+      <div class="form-group">
+          <label for="gen">GENDER</label>
+          <input type="text" class="form-control" id="gen" formControlName="gender">
+      </div>
+      <div class="form-group">
+          <label for="add">ADDRESS</label>
+          <input type="text" class="form-control" id="add" formControlName="address">
+      </div>
+      <div class="form-group">
+          <label for="npsw">NEW PASSWORD</label>
+          <input type="text" class="form-control" id="npsw" formControlName="newpassword">
+      </div>
+      <div class="form-group">
+          <label for="cpsw">CONFIRM PASSWORD</label>
+          <input type="text" class="form-control" id="cpsw" formControlName="confirmpassword">
+      </div>
+      <br/>
+      <div>
+          <button class="btn btn-primary">REGISTER</button>
+      </div>
+
+  </form>
+</div> 
