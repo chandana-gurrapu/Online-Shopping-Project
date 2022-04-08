@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   loginform:FormGroup;
   user:string;
   pwd:string;
+  buttonDisabled:boolean;
 
   constructor() { 
     this.loginform=new FormGroup({
@@ -32,6 +33,13 @@ export class LoginComponent implements OnInit {
     this.loginform.reset();
   }
   ngOnInit() {
+    this.buttonDisabled = true;
   }
-
+  checkButton() {
+    if (this.loginform.value.username=='admin' && this.loginform.value.password=='admin') {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }

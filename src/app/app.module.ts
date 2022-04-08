@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
+ 
 
 @NgModule({
   declarations: [
