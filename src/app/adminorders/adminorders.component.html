@@ -1,0 +1,124 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarExample01" style="margin-left: 1030px;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/home" (click)="isMenuCollapsed=true">HOME</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/users" (click)="isMenuCollapsed=true">USERS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/products" (click)="isMenuCollapsed=true">PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/userlogin" (click)="isMenuCollapsed=true">ORDERS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/home" (click)="isMenuCollapsed=true">SIGNOUT</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav> -->
+
+<style>
+  /* Carousel styling */ 
+  #introCarousel,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item.active {
+      height: 697px;
+  }
+</style>
+
+<div class="carousel-inner">
+  <div class="carousel-item active">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+              </div>
+          </div>
+      </div>
+  </div>  
+
+
+<ng-container>
+  <div class="container">
+      <div class="user-product">
+          <table class="table table-responsive" border="5">
+              <thead>
+                  <tr>
+                      <th>Order Id</th>
+                      <th>User Id</th>
+                      <th>User Name</th>
+                      <th>Email Id</th>
+                      <th>Mobile Number</th>
+                      <th>Delivery Address</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>1</td>
+                      <td>3</td>
+                      <td>Hema Latha</td>
+                      <td>hemalatha@gmail.com</td>
+                      <td>9647552852</td>
+                      <td>A</td>
+                      <!-- <td>
+                          <button class="btn btn-danger">REMOVE</button>
+                      </td> -->
+                  </tr>
+                  <tr>
+                      <td>2</td>
+                      <td>5</td>
+                      <td>Bhanu Siva Sai</td>
+                      <td>bannu@gmail.com</td>
+                      <td>9648572852</td>
+                      <td>Machilipatnam</td>
+                      <!-- <td>
+                          <button class="btn btn-danger">REMOVE</button>
+                      </td> -->
+                  </tr>
+                  <tr>
+                      <td>3</td>
+                      <td>1</td>
+                      <td>chandana Gurrapu</td>
+                      <td>chandana@gmail.com</td>
+                      <td>9648552852</td>
+                      <td>Warangal</td>
+                      <!-- <td>
+                          <button class="btn btn-danger">REMOVE</button>
+                      </td> -->
+                  </tr>
+                  <tr>
+                      <td>4</td>
+                      <td>2</td>
+                      <td>chandana Gajam</td>
+                      <td>chandanagajam@gmail.com</td>
+                      <td>9648553852</td>
+                      <td>Hyderabad</td>
+                      <!-- <td>
+                          <button class="btn btn-danger">REMOVE</button>
+                      </td> -->
+                  </tr>
+                  <tr>
+                      <td>5</td>
+                      <td>4</td>
+                      <td>Krishna Priya</td>
+                      <td>krishnapriya@gmail.com</td>
+                      <td>9648452852</td>
+                      <td>A</td>
+                      <!-- <td>
+                          <button class="btn btn-danger">REMOVE</button>
+                      </td> -->
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</ng-container>
+<router-outlet></router-outlet>

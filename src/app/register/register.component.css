@@ -1,0 +1,39 @@
+.content
+{
+    max-width: 500px;
+    margin: auto;
+    padding: 2% 2%;
+}
+button{
+    background-color: black;
+    color: #fff;
+}
+button:hover
+{
+    color: #fff;
+}
+.card{
+    margin-top: 10px;
+    margin-left: 520px;
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position:absolute;
+    top: 50px;
+    left: 50px;
+    transform: translate(-50px, 50px);
+    background: rgb(85, 116, 19);
+    background: linear-gradient(90deg, rgb(238, 124, 187) 0%, rgb(22, 235, 68) 100% );
+}
+.card h1 {
+    color: #fff;
+}
+label{
+    color:#fff
+}
+.error{
+    color:red;
+}
+.container mt-5{
+    margin-top: 5px;
+}

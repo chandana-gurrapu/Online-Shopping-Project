@@ -1,7 +1,35 @@
-
-<div class="image">
- <h1 style="margin-left: 1000px;padding-top: 200px;">WELCOME TO <br/>
-    ONLINE SHOPPING</h1> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarExample01"
+        aria-controls="navbarExample01"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarExample01" style="margin-left: 1150px;">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item active">
+            <strong><a class="nav-link" routerLink="/home" (click)="isMenuCollapsed=true" aria-current="page"></a></strong>
+          </li>
+          <li class="nav-item">
+            <strong><a class="nav-link" style="padding-left: 30px;" routerLink="/login" (click)="isMenuCollapsed=true">LOGIN</a></strong>
+          </li>
+          <li class="nav-item">
+            <strong> <a class="nav-link" style="padding-left: 30px;"  routerLink="/register" (click)="isMenuCollapsed=true">REGISTER</a></strong>
+          </li>
+          <li class="nav-item">
+            <strong><a class="nav-link" style="padding-left: 30px;" routerLink="/contact" (click)="isMenuCollapsed=true">ABOUT US</a></strong>
+          </li>
+        </ul>
+      </div> 
+    </div> 
+  </nav> 
+<div class="image" style="width:100%;height:690px;margin-top: 0px; background-size: cover;">
+  <h1 style="text-align: center;padding-top: 30px;">WELCOME TO ONLINE SHOPPING</h1> 
 </div> 
 
 <footer class="text-center text-white fixed-bottom" >
@@ -10,3 +38,4 @@
       <a class="text-white" href="https://onlineshopping.com/">onlineshopping.com</a>
     </div>
   </footer>
+  

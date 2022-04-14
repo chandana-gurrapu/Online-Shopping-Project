@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:80px;" >
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarExample01"
+      aria-controls="navbarExample01"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarExample01" style="margin-left: 1100px;">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/login/userdashboard/userhome" (click)="isMenuCollapsed=true" aria-current="page">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 30px;" routerLink="/login/userdashboard/usercart" (click)="isMenuCollapsed=true">CART</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 30px;"  routerLink="/login/userdashboard/userprofile" (click)="isMenuCollapsed=true">PROFILE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 30px;" routerLink="/home" (click)="isMenuCollapsed=true">SIGNOUT </a>
+        </li>
+      </ul>
+    </div> 
+  </div> 
+</nav> 
+
+
+<ng-container *ngIf="products.length !=0">
+<div class="container">
+  <div class="card-table">
+      <div class="card-product">
+          <table class="table table=responsive">
+              <thead>
+                  <tr>
+                      <th>Sr.No</th>
+                      <th>Product Name</th>
+                      <th>Product Image</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+                   <tbody>
+                       <tr *ngFor="let item of products; let i =index">
+                         <td>{{i+1}}</td>
+                         <td style="width: 15%;">{{item.title}}</td>
+                         <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
+                         <td  style="width: 12%;"> ${{item.price}}</td>
+                         <td  style="width: 12%;">{{item.Quantity}}</td>
+                         <td  style="width: 12%;"> ${{item.Total}}</td>
+                         <td>
+                          <button (click)="removeItem(item)" class="btn btn-danger">REMOVE</button>
+                         </td>
+                      </tr>
+                      <tr>
+                          <td colspan="4"></td>
+                          <td><button (click)=emptycart() class="btn btn-danger">Empty Cart</button></td>
+                          <td><button routerLink="/home" class="btn btn-primary" routerLink="/login/userdashboard/userhome">Shop More</button></td>
+                          <td><button  class="btn btn-success">Buy Now</button></td>
+                          <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+                      </tr>
+                  </tbody>
+          </table>
+      </div>
+  </div>
+</div> 
+</ng-container>  
+
+<ng-container *ngIf="products.length ==0">
+<div class="container">
+  <div class="card">
+      <h5 class="card-title">MY CART</h5>
+  </div>
+  <div class="center">
+     <img src="../usercart/cart.jpg" alt="">
+     <h4>Your cart is empty!</h4>
+     <h6>Add item to it now</h6>
+     <button routerLink="/home" class="btn btn-primary" routerLink="/login/userdashboard/userhome">Shop Now</button>
+  </div>
+</div>
+</ng-container>

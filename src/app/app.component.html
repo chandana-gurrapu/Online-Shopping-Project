@@ -1,4 +1,4 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
     <div class="container-fluid">
       <button
         class="navbar-toggler"
@@ -13,25 +13,22 @@
       <div class="collapse navbar-collapse" id="navbarExample01" style="margin-left: 1000px;">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['./home']" (click)="isMenuCollapsed=true" aria-current="page">HOME</a>
+            <a class="nav-link" routerLink="/home" (click)="isMenuCollapsed=true" aria-current="page">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="padding-left: 30px;" [routerLink]="['./login']" (click)="isMenuCollapsed=true">LOGIN</a>
+            <a class="nav-link" style="padding-left: 30px;" routerLink="/login" (click)="isMenuCollapsed=true">LOGIN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="padding-left: 30px;"  [routerLink]="['./register']" (click)="isMenuCollapsed=true">REGISTER</a>
+            <a class="nav-link" style="padding-left: 30px;"  routerLink="/register" (click)="isMenuCollapsed=true">REGISTER</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="padding-left: 30px;" [routerLink]="['./contact']" (click)="isMenuCollapsed=true">CONTACT US</a>
+            <a class="nav-link" style="padding-left: 30px;" routerLink="./contact" (click)="isMenuCollapsed=true">CONTACT US</a>
           </li>
         </ul>
       </div> 
     </div> 
-  </nav> 
-
-<main class="flex-fill">
+  </nav>  -->
   <router-outlet></router-outlet>
-</main>
  
 <!-- <footer class="text-center text-white fixed-bottom" >
   <div class="text-center p-3" style="background-color: rgb(0, 0, 0);color:rgba(193, 185, 185, 0.804)">

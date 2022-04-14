@@ -1,3 +1,101 @@
-<p>
-  admin works!
-</p>
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarExample01" style="margin-left: 1030px;">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" style="padding-left: 10px;" routerLink="/home" (click)="isMenuCollapsed=true">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="padding-left: 10px;" routerLink="/users" (click)="isMenuCollapsed=true">USERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="padding-left: 10px;" routerLink="/products" (click)="isMenuCollapsed=true">PRODUCTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="padding-left: 10px;" routerLink="/orders" (click)="isMenuCollapsed=true">ORDERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="padding-left: 10px;" routerLink="/home" (click)="isMenuCollapsed=true">SIGNOUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+<ng-container>
+    <div class="container">
+        <div class="user-product">
+            <h3 style="margin-top:20px;text-align:center">NUMBER OF USERS - {{users?.length}}</h3>
+            <table class="table table-responsive" border="5">
+                <thead>
+                    <tr>
+                        <th>USER_ID</th>
+                        <th>NAME</th>
+                        <th>EMAIL_ID</th>
+                        <th>MOBILE_NO</th>
+                        <th>GENDER</th>
+                        <th>PASSWORD</th>
+                        <th>ADDRESS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{user.user_id}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email_id}}</td>
+                        <td>{{user.mobile_no}}</td>
+                        <td>{{user.gender}}</td>
+                        <td>{{user.password}}</td>
+                        <td>{{user.address}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="delete(user.user_id)">REMOVE</button>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>2</td>
+                        <td>chandana Gajam</td>
+                        <td>Female</td>
+                        <td>chandanagajam@gmail.com</td>
+                        <td>9648553852</td>
+                        <td>
+                            <button class="btn btn-danger">REMOVE</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Hema Latha</td>
+                        <td>Female</td>
+                        <td>hemalatha@gmail.com</td>
+                        <td>9647552852</td>
+                        <td>
+                            <button class="btn btn-danger">REMOVE</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Krishna Priya</td>
+                        <td>Female</td>
+                        <td>krishnapriya@gmail.com</td>
+                        <td>9648452852</td>
+                        <td>
+                            <button class="btn btn-danger">REMOVE</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Bhanu Siva Sai</td>
+                        <td>Male</td>
+                        <td>bannu@gmail.com</td>
+                        <td>9648572852</td>
+                        <td>
+                            <button class="btn btn-danger">REMOVE</button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</ng-container>

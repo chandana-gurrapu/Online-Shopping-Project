@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:80px;" >
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarExample01"
+      aria-controls="navbarExample01"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+      <div>
+      <!-- <button class="btn btn-primary"  (click)="toggleCollapse()" *ngIf="isCollapsed">PROFILE</button> -->
+      <!-- <button class="btn btn-primary"  (click)="toggleCollapse()" *ngIf="!isCollapsed">PROFILE</button> -->
+    </div>
+    
+    <div class="collapse navbar-collapse" id="navbarExample01" style="margin-left: 1100px;">
+     
+      
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/login/userdashboard/userhome" (click)="isMenuCollapsed=true" aria-current="page">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 30px;" routerLink="/login/userdashboard/usercart" (click)="isMenuCollapsed=true">CART</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 30px;"  routerLink="/login/userdashboard/userprofile" (click)="isMenuCollapsed=true" (click)="toggleCollapse()">PROFILE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="padding-left: 30px;" routerLink="/home" (click)="isMenuCollapsed=true">SIGNOUT </a>
+        </li>
+      </ul>
+    </div> 
+  </div> 
+</nav> 
+
+ 
+
+       
+        <div class="modal fade" id="exampleModal" *ngIf="!isCollapsed" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+          <div class="modal-dialog modal-content">
+              <form action="/action_page.php" [formGroup]="productForm"  class="abc">
+                  <div class="mb-3 mt-3">
+                      <div class="modal-header" style="color:white;margin-bottom:25px">
+                          <h2 class="modal-title" id="exampleModalLabel">EDIT HERE</h2>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <!-- <label for="email" class="form-label">Email:</label> -->
+                      <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                      <input type="text" class="form-control" id="email" placeholder="Enter your full name" name="email" formControlName="pname" />
+                      <div *ngIf="pname.invalid && pname.touched">
+                          <small style="color:red" *ngIf="pname.errors.required">*Required</small>
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="emailid">Email Id</label>
+                    <input type="email" class="form-control" id="emailid" placeholder="Enter Email Id" formControlName="myemail">
+                    <small style="color:red" *ngIf="myemail.invalid && myemail.touched">*EMAIL ID IS REQUIRED</small>
+                   
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="num">Mobile Number</label>
+                    <input type="number" class="form-control" id="num" placeholder="Enter Mobile Number" formControlName="num">
+                       <div *ngIf="num.invalid && num.touched">
+                               <small style="color:red" *ngIf="num.errors.required">*MOBILE NUMBER REQUIRED</small>
+                               <!-- <small style="color:red" *ngIf="num.errors.maxlength">*MOBILE NUMBER SHOULD BE MINIMUM 10 DIGITS</small> -->
+                               <small style="color:red" *ngIf="num.errors.pattern">*MOBILE NUMBER SHOULD BE MINIMUM 10 DIGITS</small>
+                              </div> 
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="address">Address</label>
+                    <input type="adrs" class="form-control" id="address" placeholder="Enter Address" formControlName="address">
+                       <div *ngIf="address.invalid && address.touched">
+                               <small style="color:red" *ngIf="address.errors.required">*ADDRESS IS REQUIRED</small>
+                       </div> 
+                  </div>
+
+                  <button [disabled]="check()" (click)="add()" type="submit" class="btn btn-primary" style="margin-left:160px;margin-top:20px;width:100px">SAVE</button>
+              </form>
+          </div>
+      </div>
+
+      
+
+
+
+
+<div *ngIf="!isCollapsed">
+<table class="table mt-3">
+ <thead>
+    <tr>
+      <th scope="col">User Name</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Mobile Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+       <td>Chandana Gurrapu</td>
+       <td>Female</td>
+       <td>chandana@gmail.com</td>
+       <td>9648552852</td>
+       <td>
+         <button  type="button" class="btn btn-primary btn btn-info " data-bs-toggle="modal" data-bs-target="#exampleModal">EDIT</button>
+       </td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,174 @@
+ <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarExample01" style="margin-left: 1030px;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 10px;" routerLink="/home" (click)="isMenuCollapsed=true">HOME</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 10px;" routerLink="/users" (click)="isMenuCollapsed=true">USERS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 10px;" routerLink="/products" (click)="isMenuCollapsed=true">PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 10px;" routerLink="/orders" (click)="isMenuCollapsed=true">ORDERS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 10px;" routerLink="/home" (click)="isMenuCollapsed=true">SIGNOUT</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>  -->
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <!-- <div class="item">
+          <a (click)="filter('Bags')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+              <h6>All products</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('electronics')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+              <h6>Electronics</h6>
+          </a>
+      </div> -->
+      <div class="item">
+          <a (click)="filter('fashion')">
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+              <h6>Fashion</h6>
+          </a>
+      </div>
+      <!-- <div class="item">
+          <a (click)="filter('jewelery')">
+              <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+              <h6>Jewllery</h6>
+          </a>
+      </div> -->
+      <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="height:50px;margin-top:20px;margin-left:1050px;width: 145px;">ADD PRODUCT</button>
+      <!-- <button *ngIf="!isCollapsed" (click)="toggleCollapse()" class="btn btn-primary" style="height:50px;margin-top:20px;margin-left:1050px">CLOSE PRODUCT</button> -->
+  </div>
+</div>
+<!-----------------ADD PRODUCT CARD---------------------------------------------------->
+
+<!------------------------------ADD PRODUCT--------------------------------------------------------->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-content">
+      <form action="/action_page.php" [formGroup]="productForm" (ngSubmit)="getName()" class="abc">
+          <div class="mb-3 mt-3">
+              <div class="modal-header" style="color:white;margin-bottom:25px">
+                  <h2 class="modal-title" id="exampleModalLabel">ADD HERE</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <!-- <label for="email" class="form-label">Email:</label> -->
+              <label for="exampleInputEmail1" class="form-label">Product Name</label>
+              <input type="text" class="form-control" id="email" placeholder="Enter Name Of Product" name="email" formControlName="pname" />
+              <div *ngIf="pname.invalid && pname.touched">
+                  <small style="color:red" *ngIf="pname.errors.required">*Required</small>
+                  <small style="color:red" *ngIf="pname.errors.pattern">*Enter valid product name</small>
+              </div>
+          </div>
+          <div class="mb-3">
+              <!-- <label for="pwd" class="form-label">Password:</label> -->
+              <label for="exampleInputPassword1" class="form-label">Price</label>
+              <input type="number" class="form-control" id="pwd" placeholder="Enter Price" name="pswd" formControlName="price" />
+              <small style="color:red" *ngIf="price.invalid && price.touched">*Enter price</small>
+          </div>
+          <div class="mb-3">
+              <!-- <label for="pwd" class="form-label">Password:</label> -->
+              <label for="exampleInputPassword1" class="form-label">Stock</label>
+              <input type="number" class="form-control" id="pwd" placeholder="Enter Stock" name="pswd" formControlName="stock" />
+              <small style="color:red" *ngIf="stock.invalid && stock.touched">*Mention Quantity</small>
+          </div>
+          <div class="mb-3" style="margin-top:40px">
+              <!-- <label for="formFile" class="form-label">Default file input example</label> -->
+              <input class="form-control" type="file" id="formFile" formControlName="fileOutput">
+          </div>
+          <button [disabled]="bob()" (click)="getName()" type="submit" class="btn btn-primary" style="margin-left:160px;margin-top:20px;width:100px">ADD</button>
+          <button>Add</button>
+      </form>
+  </div>
+</div>
+
+<!---------------------------------------UPDATE FORM------------------------------------------------------------------------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-content">
+      <form action="/action_page.php" [formGroup]="productForm" (ngSubmit)="getNameOne()" class="abc1">
+          <div class="mb-3 mt-3">
+              <div class="modal-header" style="color:white;margin-bottom:25px">
+                  <h2 class="modal-title" id="exampleModalLabel">UPDATE HERE</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <!-- <label for="email" class="form-label">Email:</label> -->
+              <label for="exampleInputEmail1" class="form-label">Product Name</label>
+              <input type="text" class="form-control" id="email" placeholder="Enter Name Of Product" name="email" formControlName="pname" />
+              <div *ngIf="pname.invalid && pname.touched">
+                  <small style="color:red" *ngIf="pname.errors.required">*Required</small>
+                  <small style="color:red" *ngIf="pname.errors.pattern">*Enter valid product name</small>
+              </div>
+          </div>
+          <div class="mb-3">
+              <!-- <label for="pwd" class="form-label">Password:</label> -->
+              <label for="exampleInputPassword1" class="form-label">Price</label>
+              <input type="number" class="form-control" id="pwd" placeholder="Enter Product Price" name="pswd" formControlName="price" />
+              <small style="color:red" *ngIf="price.invalid && price.touched">*Enter price</small>
+          </div>
+          <div class="mb-3">
+              <!-- <label for="pwd" class="form-label">Password:</label> -->
+              <label for="exampleInputPassword1" class="form-label">Stock</label>
+              <input type="number" class="form-control" id="pwd" placeholder="Enter Stock" name="pswd" formControlName="stock" />
+              <small style="color:red" *ngIf="stock.invalid && stock.touched">*Mention Quantity</small>
+          </div>
+          <button [disabled]="bobmarle()" (click)="getNameOne()" type="submit" class="btn btn-primary" style="margin-left:160px;margin-top:20px;width:100px">UPDATE</button>
+      </form>
+  </div>
+</div>
+<!----------------------------------------------------------------------------------------------------->
+
+<style>
+  /* Carousel styling */ 
+  #introCarousel,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item.active {
+      height: 4000px;
+  }
+</style>
+
+<div class="carousel-inner">
+  <div class="carousel-item active">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+              </div>
+          </div>
+      </div>
+  </div>  
+
+
+<div class="container" >
+  <div class="row">
+      <ng-container *ngFor="let item of productList">
+          <div class="card col-md-3">
+              <img src="{{item.image}}" alt="">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <p><strong>Price:</strong> ${{item.price}}</p>
+              <div id="d">
+                  <!-- </div>
+              <div> -->
+                  <button id="b" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top:5px">Update</button>
+                  <!-- </div>
+              <div> -->
+                  <button id="c" class="btn btn-primary" (click)=addtocart(item) style="margin-top:5px;margin-left:40px">Delete</button>
+              </div>
+          </div>
+      </ng-container>
+  </div>
+</div>

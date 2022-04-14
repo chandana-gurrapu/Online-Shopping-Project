@@ -1,0 +1,48 @@
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarExample01" style="margin-left: 980px;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/login/admindashboard" (click)="isMenuCollapsed=true">DASHBOARD</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/login/admindashboard/admin" (click)="isMenuCollapsed=true">USERS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/login/admindashboard/adminproducts" (click)="isMenuCollapsed=true">PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/login/admindashboard/adminorders" (click)="isMenuCollapsed=true">ORDERS</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" style="padding-left: 20px;" routerLink="/home" (click)="isMenuCollapsed=true">SIGNOUT</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+  <!-- <style>
+      /* Carousel styling */ 
+      #introCarousel,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item.active {
+          height: 4000px;
+      }
+  </style>
+
+   <div class="carousel-inner">
+      <div class="carousel-item active">
+          <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+              <div class="d-flex justify-content-center align-items-center h-100">
+                  <div class="text-white text-center">
+                  </div>
+              </div>
+          </div>
+      </div>   -->
+
+       <router-outlet></router-outlet> 
